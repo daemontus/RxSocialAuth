@@ -111,7 +111,7 @@ public class RxFacebookAuth {
 
         // prevent fragment manager already executing transaction
         int stackCount = fragmentManager.getBackStackEntryCount();
-        if( fragmentManager.getFragments() != null )
+        if( fragmentManager.getFragments() != null && !fragmentManager.getFragments().isEmpty() )
             fragmentManager = fragmentManager.getFragments().get( stackCount > 0 ? stackCount-1 : stackCount ).getChildFragmentManager();
 
         RxFacebookAuthFragment rxFacebookAuthFragment = (RxFacebookAuthFragment)
